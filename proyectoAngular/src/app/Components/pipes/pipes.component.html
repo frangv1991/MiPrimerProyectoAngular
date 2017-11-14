@@ -1,0 +1,50 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Filtro de fecha</h3>
+	</div>
+	<div class="panel-body">
+		Ejemplo: <br />
+		Aplicando filtro dd/MM/yyyy HH:mm: <strong>{{ birthDate|date:'dd/MM/yyyy HH:mm' }}</strong><br/>
+		Aplicando filtro fullDate: <strong>{{ birthDate|date:'fullDate' }}</strong><br/>
+		Aplicando filtro shortDate: <strong>{{ birthDate|date:'shortDate' }}</strong><br/>
+	</div>
+</div>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Filtro de transformación de caractéres</h3>
+  </div>
+  <div class="panel-body">
+    Ejemplo: <br />
+    Texto en mayúsculas: <strong>{{ dummyText|uppercase }}</strong><br/>
+    Texto en minúsculas: <strong>{{ dummyText|lowercase }}</strong><br/>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Filtro personalizado: stripHTML</h3>
+  </div>
+  <div class="panel-body">
+    Ejemplo: <br />
+    Sin filtro: <strong>{{ htmlText }}</strong><br/>
+    Con filtro: <strong>{{ htmlText|stripHtml }}</strong><br/>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Filtro personalizado: truncate-string</h3>
+  </div>
+  <div class="panel-body">
+    Ejemplo: <br />
+    Sin filtro: <strong>{{ dummyText }}</strong><br/>
+    Con filtro: <strong>{{ dummyText|truncateString:{maxLength: 10, ellipsis: true} }}</strong><br/>
+  </div>
+</div>

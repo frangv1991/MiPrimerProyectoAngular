@@ -1,0 +1,73 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Directivas estructurales: ngIf</h3>
+  </div>
+  <div class="panel-body">
+    Ejemplo:
+    <br/>
+    <button class="btn btn-default" (click)="changeColor('azul')">Azul</button>
+    <button class="btn btn-default" (click)="changeColor('verde')">Verde</button>
+    <div class="label label-primary" *ngIf="activeColor == 'azul'">COLOR ACTIVO AZUL</div>
+    <div class="label label-info" *ngIf="activeColor == 'verde'">COLOR ACTIVO VERDE</div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Directivas estructurales: ngFor</h3>
+  </div>
+  <div class="panel-body">
+    Ejemplo:
+    <br/>
+    <strong>Lista de colores</strong>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let color of colorList; let i = index">
+        {{ i+1 }}, {{ color }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Directivas estructurales: ngFTemplate</h3>
+  </div>
+  <div class="panel-body">
+    Ejemplo:
+    <br/>
+    <div *ngIf="userIsLogin; then loginTrue else loginFalse"></div>
+    <ng-template #loginTrue>
+      <button class="btn btn-warning" (click) = "changeUserStatus()">Logout</button>
+      El usuario SI está logueado.
+    </ng-template>
+    
+    <ng-template #loginFalse>
+      <button class="btn btn-primary" (click) = "changeUserStatus()">Login</button>
+      El usuario NO está logueado.
+    </ng-template>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Directivas de atributo: ngClass</h3>
+  </div>
+  <div class="panel-body">
+    Ejemplo:
+    <br/>
+    <button class="btn default" (click) = "changeAlertStatus('success')">Éxito</button>
+    <button class="btn default" (click) = "changeAlertStatus('error')">Error</button>
+    <div class="alert" [ngClass]="{
+      'alert-success': alertStatus == 'success',
+      'alert-danger': alertStatus == 'error'
+      }">
+      Lore ipsum dolor sit amer, consecteteur...
+    </div>
+  </div>
+</div>
