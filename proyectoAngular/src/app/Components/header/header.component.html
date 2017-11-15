@@ -1,3 +1,23 @@
-<h1>
-  Proyecto Angular
-</h1>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Menú</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Curso de Angular</a>
+		</div>
+	</div>
+
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+			<li routerLinkActive = "active"><a [routerLink] = "['data-binding']">Data binding</a></li>
+			<li routerLinkActive = "active"><a [routerLink] = "['directives']">Directivas</a></li>
+			<li routerLinkActive = "active"><a [routerLink] = "['pipes']">Filtros</a></li>
+			<li routerLinkActive = "active"><a [routerLink] = "['forms']">Formularios</a></li>
+			<li routerLinkActive = "active"><a [routerLink] = "['reactive-forms']">Formularios reactivos</a></li>
+		</ul>
+	</div>
+</nav>

@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+
+import { APP_ROUTING } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
@@ -15,6 +19,7 @@ import { FormsComponent } from './Components/forms/forms.component';
 
 import { UserProviderService } from './Services/user-provider.service';
 import { ReactiveFormsComponent } from './Components/reactive-forms/reactive-forms.component';
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +33,15 @@ import { ReactiveFormsComponent } from './Components/reactive-forms/reactive-for
     StripHtmlPipe,
     TruncateStringPipe,
     FormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    APP_ROUTING,
+    HttpModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: "es-ES"},

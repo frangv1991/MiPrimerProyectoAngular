@@ -2,10 +2,47 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
+    <h3 class="panel-title">Listado de Usuarios</h3>
+  </div>
+  <div class="panel-body">
+    <table class = "table table-striped">
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Edad</th>
+        <th>Puesto</th>
+        <th>Estado</th>
+        <th>&nbsp;</th>
+      </tr>
+      <tr *ngFor = "let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.age }}</td>
+        <td>{{ user.job }}</td>
+        <td>
+          <span class = "label label-success" *ngIf = "user.isActive">ACTIVO</span>
+          <span class = "label label-success" *ngIf = "!user.isActive">INACTIVO</span>
+        </td>
+        <td>
+          <button class = "btn btn-primary glyphicon glyphicon-pencil"
+                  (click) = "loadUser(user)"></button>
+          <button class = "btn btn-danger glyphicon glyphicon-trash"
+                  (click) = "removeUser(user)"></button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
     <h3 class="panel-title">Creación de un formulario reactivo</h3>
   </div>
   <div class="panel-body">
-    <form [formGroup] = "employeeForm" (ngSubmit)="onSubmit(employeeForm)">
+    <form [formGroup] = "employeeForm">
       <div class="form-group">
         <label>Nombre</label>
         <input type="text"
@@ -62,6 +99,12 @@
           formControlName="isActive" /> ¿Activo?
         </label>
       </div>
+      
+      <button type="button" class="btn btn-success"
+        *ngIf = "employee.id == null"
+        [disabled] = "!employeeForm.valid"
+        (click) = "createUser()">Crear usuario</button>
+      
     </form>
   </div>
 </div>
